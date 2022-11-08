@@ -6,18 +6,15 @@
 
 int main(int argc, char *argv[]) 
 {
-	char str[30];
-	int i;
+	char c;
 	
-	FILE *fp;
+	FILE *fp = NULL;
 	
-	fp = fopen("C:/Users/sinka/Desktop/4학기/수업/전자공학도를 위한 프로그래밍/실습 파일/10/sample.txt", "w");
+	fp = fopen("C:/Users/sinka/Desktop/4학기/수업/전자공학도를 위한 프로그래밍/실습 파일/10/sample.txt", "r");
 	
-	for (i = 0; i <3; i++)
+	while((c = fgetc(fp)) != EOF)
 	{
-		printf("input a word : ");
-		scanf("%s", str);
-		fprintf(fp, "%s\n", str);
+		putchar(c);
 	}
 	
 	fclose(fp);
